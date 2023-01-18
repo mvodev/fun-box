@@ -1,0 +1,49 @@
+@import './styles/constants.scss';
+.page {
+  max-width: 1280px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 680px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  &__header {
+    font-family: $font-additional;
+    font-size: 2.25rem;
+    text-align: center;
+    color: white;
+    margin-top: 36px;
+  }
+
+  &__card-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 80px;
+    margin-top: 24px;
+  }
+  &__card-row {
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+  }
+}
+
+@media (max-width:1140px) {
+  .page {
+    &__card-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width:750px) {
+  .page {
+    &__card-row {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+@import './styles/constants.scss';
+@import './styles/fonts.scss';
+@import './styles/reset.scss';
+
+html,#root {
+  height: 100%;
+}
+
+body {
+  font-family: $font-main, $fallback-font;
+  font-size: $font-size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  background-image: url('./assets/img/Pattern.png');
+}

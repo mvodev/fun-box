@@ -1,0 +1,243 @@
+@import '../../styles/constants.scss';
+
+.card {
+  height: 509px;
+  width: 320px;
+  position: relative;
+  cursor: pointer;
+
+  &__curtain.card_disabled {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 268px;
+    height: 472px;
+    border-radius: 12px 12px 12px 0;
+    background-color: #F2F2F2;
+    opacity: .5;
+    z-index: 5;
+  }
+  &__additional-curtain.card_disabled{
+    position: absolute;
+    bottom: 33px;
+    left: 4px;
+    width: 44px;
+    height: 430px;
+    border-radius: 0 0 0 12px;
+    background-color: #F2F2F2;
+    opacity: .5;
+    z-index: 5;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  
+  &__image {
+    background-image: url('../../assets/img/cat3.png');
+    position: absolute;
+    bottom: 33px;
+    left: 4px;
+    z-index: 1;
+    width: 259px;
+    height: 270px;
+  }
+  &__plug {
+    height: 437px;
+    width: 43px;
+    background-color: white;
+    border-left: 4px solid #1698D9;
+    border-bottom: 4px solid #1698D9;
+    border-radius: 0 0 0 12px;
+  }
+
+  &__plug.card_selected {
+    border-left: 4px solid #D91667;
+    border-bottom: 4px solid #D91667;
+  }
+
+  &__plug.card_disabled {
+    border-left: 4px solid #B3B3B3;
+    border-bottom: 4px solid #B3B3B3;
+  }
+
+  &__triangle {
+    position: absolute;
+    top: 1px;
+    left: -0.5px;
+    z-index: -1;
+  }
+  
+  &__triangle-bottom-right {
+    width: 0;
+    height: 0;
+    border-bottom: 44px solid white;
+    border-left: 44px solid transparent;
+    position: relative;
+  }
+
+  &__triangle-bottom-right::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 62px;
+    border-radius: 3px;
+    transform: rotate(135deg);
+    bottom: -23px;
+    left: -52px;
+    background-color: #1698D9;
+  }
+
+  &__triangle-bottom-right.card_selected::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 62px;
+    border-radius: 3px;
+    background-color: #D91667;
+    transform: rotate(135deg);
+    bottom: -23px;
+    left: -52px;
+  }
+
+  &__triangle-bottom-right.card_disabled::before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 62px;
+    border-radius: 3px;
+    background-color: #B3B3B3;
+    transform: rotate(135deg);
+    bottom: -23px;
+    left: -52px;
+  }
+
+
+  &__main {
+    height: 480px;
+    width: 277px;
+    background-size: cover;
+    border-top: 4px solid #1698D9;
+    border-bottom: 4px solid #1698D9;
+    border-right: 4px solid #1698D9;
+    background-color: white;
+    border-radius: 0 12px 12px 0;
+  }
+
+  &__main.card_selected {
+    border-top: 4px solid #D91667;
+    border-bottom: 4px solid #D91667;
+    border-right: 4px solid #D91667;
+  }
+
+  &__main.card_disabled {
+    border-top: 4px solid #B3B3B3;
+    border-bottom: 4px solid #B3B3B3;
+    border-right: 4px solid #B3B3B3;
+  }
+
+  &__header,&__header-label {
+    text-align: left;
+    font-family: $font-main;
+    font-weight: 700;
+    padding-left: 5px;
+  }
+
+  &__header {
+    font-size: 3rem;
+  }
+
+  &__header.card_disabled,
+  &__header-label.card_disabled {
+    color: #B3B3B3;
+  }
+
+  &__header-label {
+    font-size: 1.5rem;
+  }
+
+  &__sub-header {
+    font-weight: 700;
+    font-family: $font-main;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 19px;
+    color: #666666;
+    padding-top: 21px;
+    text-align: center;
+  }
+
+  &__remained,
+  &__gift,&__gift-extra {
+    font-family: $font-main;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1rem;
+    color:#666666;
+  }
+
+  &__remained {
+    margin-top: 15px;
+    margin-left: 5px;
+  }
+
+  &__gift,&__gift-extra {
+    margin-left: 5px;
+  }
+
+  &__weight.card_selected {
+    background-color: #D91667;
+    &__label {
+    i {
+      color: #D91667;
+      font-style: normal;
+      border-bottom: 1px dashed #D91667;
+    }
+  }
+  }
+
+  &__weight.card_disabled{
+    background-color: #B3B3B3;
+  }
+
+  &__weight {
+    background-color: #1698D9;
+    height: 80px;
+    color: white;
+    width: 80px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 45px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    
+    &-number {
+      font-size: 2.625rem;
+    }
+
+    &-units {
+      font-size: 1.3125rem;
+      line-height: 1.375rem;
+    }
+  }
+  &__label {
+    color: white;
+    text-align: center;
+    font-size: 0.8125rem;
+    margin-top: 15px;
+    i {
+      color: #1698D9;
+      font-style: normal;
+      border-bottom: 1px dashed #1698D9;
+    }
+  }
+
+  &__label.card_disabled {
+    color: #FFFF66;
+  }
+}
